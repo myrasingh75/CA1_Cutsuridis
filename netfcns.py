@@ -164,6 +164,9 @@ def connectCA3(FCONN, C_P, EM_CA3, EN_CA3, cells, pop_by_name, connect_random_lo
                         # set up connection from source to target
                         #nc = pc.gid_connect(j+iCA3, syn)
                         nc2.weight[0] = CLWGT    # unlearned weight
+                        
+                    if np.random.rand(1)[0] < 0.1:
+                       nc2.weight[0] = 0 #lowering synaptic transmission by zeroing out ('killing') synapses
 
     return ncslist
 

@@ -532,26 +532,27 @@ class PyramidalCell(modelcell):
 
 
     def addSynapses(self):
+        RT = 0.6
         self.pre_list = []
 
         # E0
         syn_ = h.MyExp2Syn(self.lm_thick1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E1
         syn_ = h.MyExp2Syn(self.lm_thick2(0.5))
         self.pre_list.append(syn_)    # AMPA        EC 
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E2
         syn_ = h.MyExp2Syn(self.radTmed(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
@@ -565,63 +566,63 @@ class PyramidalCell(modelcell):
         # E4
         syn_ = h.MyExp2Syn(self.radTprox(0.5))
         self.pre_list.append(syn_)    # AMPA        PC Recurrent collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # I5
         syn_ = h.MyExp2Syn(self.soma(0.5))
         self.pre_list.append(syn_)    # GABA-A    basket cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I6
         syn_ = h.MyExp2Syn(self.axon(0.1))
         self.pre_list.append(syn_)    # GABA-A    AA cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I7
         syn_ = h.MyExp2Syn(self.lm_thick1(0.5))
         self.pre_list.append(syn_)    # GABA-A    OLM cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I8
         syn_ = h.MyExp2Syn(self.lm_thick2(0.5))
         self.pre_list.append(syn_)    # GABA-A    OLM cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I9
         syn_ = h.MyExp2Syn(self.lm_thick1(0.5))
         self.pre_list.append(syn_)    # GABA-B    OLM cell
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
         
         # I10
         syn_ = h.MyExp2Syn(self.lm_thick2(0.5))
         self.pre_list.append(syn_)    # GABA-B    OLM Cell
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
         
         # I11
         syn_ = h.MyExp2Syn(self.radTmed(0.8))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I12
         syn_ = h.MyExp2Syn(self.radTmed(0.7))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
 
@@ -629,28 +630,28 @@ class PyramidalCell(modelcell):
         # I13
         syn_ = h.MyExp2Syn(self.radTmed(0.6))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
                 
         # I14
         syn_ = h.MyExp2Syn(self.radTmed(0.4))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
                 
         # I15
         syn_ = h.MyExp2Syn(self.radTmed(0.3))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75       
                 
         # I16
         syn_ = h.MyExp2Syn(self.radTmed(0.2))
         self.pre_list.append(syn_)    # GABA-A    Bistratified
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
 
@@ -658,7 +659,7 @@ class PyramidalCell(modelcell):
         # I17
         syn_ = h.MyExp2Syn(self.radTmed(0.8))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
         
@@ -666,7 +667,7 @@ class PyramidalCell(modelcell):
         # I18
         syn_ = h.MyExp2Syn(self.radTmed(0.7))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
         
@@ -674,14 +675,14 @@ class PyramidalCell(modelcell):
         # I19
         syn_ = h.MyExp2Syn(self.radTmed(0.6))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75        
                 
         # I20
         syn_ = h.MyExp2Syn(self.radTmed(0.4))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -689,14 +690,14 @@ class PyramidalCell(modelcell):
         # I21
         syn_ = h.MyExp2Syn(self.radTmed(0.3))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75       
                 
         # I22
         syn_ = h.MyExp2Syn(self.radTmed(0.2))
         self.pre_list.append(syn_)    # GABA-B    Bistratified
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -704,7 +705,7 @@ class PyramidalCell(modelcell):
         # I23
         syn_ = h.STDPE2(self.radTmed(0.5))
         self.pre_list.append(syn_)    # AMPA modifiable	CA3 Schaffer collaterals
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
@@ -829,33 +830,34 @@ class OLMCell(modelcell):
 
 
     def addSynapses(self):
+        RT = 0.6
         self.pre_list = []
         
         # E0
         syn_ = h.Exp2Syn(self.dend2(0.5))
         self.pre_list.append(syn_)    # AMPA        Pyramidal
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E1
         syn_ = h.Exp2Syn(self.dend1(0.5))
         self.pre_list.append(syn_)    # AMPA        Pyramidal
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # I2
         syn_ = h.Exp2Syn(self.dend1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I3
         syn_ = h.Exp2Syn(self.dend1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -1201,96 +1203,97 @@ class BasketCell(modelcell):
 
 
     def addSynapses(self):
+        RT = 0.6
         self.pre_list = []
 
         # E0
         syn_ = h.MyExp2Syn(self.lmM1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E1
         syn_ = h.MyExp2Syn(self.lmM2(0.5))
         self.pre_list.append(syn_)    # AMPA        EC 
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E2
         syn_ = h.MyExp2Syn(self.radM1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E3
         syn_ = h.MyExp2Syn(self.radM2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E4
         syn_ = h.MyExp2Syn(self.radT1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E5
         syn_ = h.MyExp2Syn(self.radT2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E6
         syn_ = h.MyExp2Syn(self.oriT1(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E7
         syn_ = h.MyExp2Syn(self.oriT2(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # I8
         syn_ = h.MyExp2Syn(self.soma(0.5))
         self.pre_list.append(syn_)    # GABA-A	Neighboring basket cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I9
         syn_ = h.MyExp2Syn(self.soma(0.6))
         self.pre_list.append(syn_)    # GABA-A	Bistratified cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I10
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I11
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I12
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -1298,7 +1301,7 @@ class BasketCell(modelcell):
         # I13
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -1645,96 +1648,97 @@ class AACell(modelcell):
 
 
     def addSynapses(self):
+        RT = 0.6
         self.pre_list = []
 
         # E0
         syn_ = h.MyExp2Syn(self.lmM1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E1
         syn_ = h.MyExp2Syn(self.lmM2(0.5))
         self.pre_list.append(syn_)    # AMPA        EC (not used)
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # E2
         syn_ = h.MyExp2Syn(self.radM1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E3
         syn_ = h.MyExp2Syn(self.radM2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E4
         syn_ = h.MyExp2Syn(self.radT1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E5
         syn_ = h.MyExp2Syn(self.radT2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E6
         syn_ = h.MyExp2Syn(self.oriT1(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E7
         syn_ = h.MyExp2Syn(self.oriT2(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # I8
         syn_ = h.MyExp2Syn(self.soma(0.5))
         self.pre_list.append(syn_)    # GABA-A	Neighboring axo-axonic cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I9
         syn_ = h.MyExp2Syn(self.soma(0.6))
         self.pre_list.append(syn_)    # GABA-A	Bistratified cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I10
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I11
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I12
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -1742,7 +1746,7 @@ class AACell(modelcell):
         # I13
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
         
@@ -2028,96 +2032,97 @@ class BistratifiedCell(modelcell):
 
 
     def addSynapses(self):
+        RT = 0.6
         self.pre_list = []
        
         # E0
         syn_ = h.MyExp2Syn(self.radM1(0.5))
         self.pre_list.append(syn_)    # AMPA        EC (not used)
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E1
         syn_ = h.MyExp2Syn(self.radM2(0.5))
         self.pre_list.append(syn_)    # AMPA        EC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E2
         syn_ = h.MyExp2Syn(self.radM1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E3
         syn_ = h.MyExp2Syn(self.radM2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E4
         syn_ = h.MyExp2Syn(self.radT1(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E5
         syn_ = h.MyExp2Syn(self.radT2(0.5))
         self.pre_list.append(syn_)    # AMPA        CA3 Shaffer collateral
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E6
         syn_ = h.MyExp2Syn(self.oriT1(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
 
         # E7
         syn_ = h.MyExp2Syn(self.oriT2(0.5))
         self.pre_list.append(syn_)    # AMPA        PC
-        syn_.tau1 = 0.5
+        syn_.tau1 = 0.5*RT
         syn_.tau2 = 3
         syn_.e = 0
         
         # I8
         syn_ = h.MyExp2Syn(self.soma(0.5))
         self.pre_list.append(syn_)    # GABA-A	Neighboring bistratified cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I9
         syn_ = h.MyExp2Syn(self.soma(0.5))
         self.pre_list.append(syn_)    # GABA-A	Basket cell
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I10
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I11
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-A	Septum
-        syn_.tau1 = 1
+        syn_.tau1 = 1*RT
         syn_.tau2 = 8
         syn_.e = -75
         
         # I12
         syn_ = h.MyExp2Syn(self.oriT1(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 
@@ -2125,7 +2130,7 @@ class BistratifiedCell(modelcell):
         # I13
         syn_ = h.MyExp2Syn(self.oriT2(0.6))
         self.pre_list.append(syn_)    # GABA-B	Septum
-        syn_.tau1 = 35
+        syn_.tau1 = 35*RT
         syn_.tau2 = 100
         syn_.e = -75
 

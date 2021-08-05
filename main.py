@@ -45,8 +45,8 @@ plotflag = 0
 network_scale = 1 # set to 1 for full scale or 0.2 for a quick test with a small network
 scaleEScon = 1 # scaling factor for number of excitatory connections in the network, should be set to 1
 
-numCycles = 6 # set to 2 for a short test network or 8 for a full simulation
-simname="guitar"
+numCycles = 8 # set to 2 for a short test network or 8 for a full simulation
+simname="backgroundNoise_releaseProbability"
 connect_random_low_start_ = 1  # low seed for mcell_ran4_init()
 
 netfile = 'N100S20P5'

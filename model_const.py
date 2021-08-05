@@ -89,7 +89,7 @@ SEPWGTL = 0.0002	# SEP weight to BSCs and OLMs
 SEPDEL = 1	# SEP delay
 
 # Background excitation (not used)
-ENUM = 0    # number of spikes
+ENUM = 100    # number of spikes
 ESTART = 0    # time of first spike
 EINT = 200    # spike ISI
 ENOISE = 1    # ISI noise
@@ -104,7 +104,7 @@ ECSTART = STARTDEL    # time of first EC spike
 ECINT = GAMMA    # EC spike ISI
 ECNOISE = 0.2    # EC ISI noise
 ECWGT = 0.0    # EC weight to PCs
-#ECWGT = 0.001    # EC weight to PCs
+ECWGT = 0.001    # EC weight to PCs
 ECDEL = 1    # EC delay
 EIWGT = 0.00015    # excitatory weights to INs
 EIDEL = 1    # delay (msecs)
